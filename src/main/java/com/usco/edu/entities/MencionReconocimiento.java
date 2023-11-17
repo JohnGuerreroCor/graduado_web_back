@@ -20,6 +20,10 @@ public class MencionReconocimiento implements Serializable {
 	private String ambito;
 	private String titulo;
 	private String descripcion;
+	private int paisCodigo;
+	private String pais;
+	private int departamentoCodigo;
+	private String departamento;
 	private int municipioCodigo;
 	private String municipio;
 	private Date fecha;
