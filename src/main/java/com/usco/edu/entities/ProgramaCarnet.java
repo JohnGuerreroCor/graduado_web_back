@@ -11,6 +11,7 @@ public class ProgramaCarnet implements Serializable {
 	private int codigo;
 	private int codigoUaa;
 	private String nombrePrograma;
+	private String nivelAcademico;
 	private String nombreCorto;
 	private String sede;
 	

@@ -14,7 +14,11 @@ public class PersonaCarnet implements Serializable {
 	
 	private int tipoDocumento;
 	
+	private String tipoDocumentoAcronimo;
+	
 	private String documento;
+	
+	private String lugarExpedicion;
 	
 	private String identificacion;
 	
@@ -35,6 +39,10 @@ public class PersonaCarnet implements Serializable {
 	private String emailPersonal;
 	
 	private String emailInterno;
+	
+	private String telefonoFijo;
+	
+	private String telefonoMovil;
 	
 	private static final long serialVersionUID = 1L;
 

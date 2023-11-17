@@ -2,42 +2,18 @@ package com.usco.edu.entities;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Table(name = "departamento", schema = "dbo")
-public class Departamento implements Serializable{
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "dep_codigo", columnDefinition = "integer")
+@Data
+@NoArgsConstructor
+public class Departamento implements Serializable {
+	
 	private int codigo;
-	
-	
-	@Column(name = "dep_nombre")
 	private String nombre;
+	private String acronimo;
+	private Pais pais;
 	
-
-	public int getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(int codigo) {
-		this.codigo = codigo;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	private static final long serialVersionUID = 1L;
-
+	
 }

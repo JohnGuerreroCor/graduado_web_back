@@ -15,6 +15,7 @@ public class ProgramaCarnetRowMapper implements RowMapper<ProgramaCarnet> {
 		programa.setCodigo(rs.getInt("pro_codigo"));
 		programa.setCodigoUaa(rs.getInt("uaa_codigo"));
 		programa.setNombrePrograma(rs.getString("uaa_nombre"));
+		programa.setNivelAcademico(rs.getString("nia_nombre"));
 		programa.setNombreCorto(rs.getString("uaa_nombre_corto"));
 		programa.setSede(rs.getString("sed_nombre"));
 		return programa;

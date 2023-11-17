@@ -14,17 +14,21 @@ public class PersonaCarnetRowMapper implements RowMapper<PersonaCarnet> {
 		PersonaCarnet persona = new PersonaCarnet();
 		persona.setCodigo(rs.getInt("per_codigo"));
 		persona.setTipoDocumento(rs.getInt("tii_codigo"));
-		persona.setDocumento(rs.getString("snies_codigo"));
+		persona.setTipoDocumentoAcronimo(rs.getString("snies_codigo"));
+		persona.setFechaExpedicionDocumento(rs.getDate("per_fecha_expedicion"));
+		persona.setLugarExpedicion(rs.getString("mun_nombre"));
+		persona.setDocumento(rs.getString("tii_nombre"));
 		persona.setIdentificacion(rs.getString("per_identificacion"));
 		persona.setGrupoSanguineo(rs.getString("grs_nombre"));
 		persona.setGenero(rs.getString("per_genero"));
-		persona.setFechaExpedicionDocumento(rs.getDate("per_fecha_expedicion"));
 		persona.setFechaNacimiento(rs.getDate("per_fecha_nacimiento"));
 		persona.setEdad(rs.getInt("edad"));
 		persona.setNombre(rs.getString("per_nombre"));
 		persona.setApellido(rs.getString("per_apellido"));
 		persona.setEmailPersonal(rs.getString("per_email"));
 		persona.setEmailInterno(rs.getString("per_email_interno"));
+		persona.setTelefonoFijo(rs.getString("per_telefono_fijo"));
+		persona.setTelefonoMovil(rs.getString("per_telefono_movil"));
 		return persona;
 	}
 

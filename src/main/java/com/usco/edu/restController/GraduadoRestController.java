@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.usco.edu.entities.EstudianteActivo;
 import com.usco.edu.entities.Graduado;
 import com.usco.edu.service.IGraduadoService;
 
@@ -18,8 +19,14 @@ public class GraduadoRestController {
 	IGraduadoService graduadoService;
 	
 	@GetMapping(path = "obtener-graduado/{codigo}/{username}")
-	public List<Graduado> buscarPorCodigo(@PathVariable String codigo, @PathVariable String username) {
-		return graduadoService.buscarPorCodigo(codigo, username);
+	public List<Graduado> buscarGraduadoPorIdentificacion(@PathVariable String codigo, @PathVariable String username) {
+		return graduadoService.buscarGraduadoPorIdentificacion(codigo, username);
+	}
+	
+	
+	@GetMapping(path = "obtener-graduado-estudiante-activo/{codigo}/{username}")
+	public List<EstudianteActivo> buscarGraduadoEstudianteActivo(@PathVariable String codigo, @PathVariable String username) {
+		return graduadoService.buscarGraduadoEstudianteActivo(codigo, username);
 	}
 	
 }
