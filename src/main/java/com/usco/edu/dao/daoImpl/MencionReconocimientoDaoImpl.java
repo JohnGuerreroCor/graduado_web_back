@@ -43,7 +43,7 @@ public class MencionReconocimientoDaoImpl implements IMencionReconocimientoDao {
 				+ "inner join municipio m on mr.mun_codigo = m.mun_codigo "
 				+ "inner join departamento d on m.dep_codigo = d.dep_codigo "
 				+ "inner join pais pa on d.pai_codigo = pa.pai_codigo "
-				+ "where p.per_identificacion = '" + id + "'";
+				+ "where p.per_identificacion = '" + id + "' and mr.mer_estado = 1";
 		return jdbcTemplate.query(sql, new MencionReconocimientoSetExtractor());
 		
 	}
