@@ -37,5 +37,21 @@ public class ExpectativaCapacitacionServiceImpl implements IExpectativaCapacitac
 		return expectativaCapacitacionDao.obtenerRespuestasIdentificacion(id);
 		
 	}
+
+	@Override
+	public int registrarExpectativaCompetenciaRespuesta(
+			ExpectativaCompetenciaRespuesta expectativaCompetenciaRespuesta) {
+		
+		return expectativaCapacitacionDao.registrarExpectativaCompetenciaRespuesta(expectativaCompetenciaRespuesta);
+		
+	}
+
+	@Override
+	public int actualizarExpectativaCompetenciaRespuesta(
+			ExpectativaCompetenciaRespuesta expectativaCompetenciaRespuesta) {
+		
+		return expectativaCapacitacionDao.actualizarExpectativaCompetenciaRespuesta(expectativaCompetenciaRespuesta);
+		
+	}
 	
 }

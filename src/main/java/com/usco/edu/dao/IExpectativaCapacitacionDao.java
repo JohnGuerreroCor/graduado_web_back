@@ -13,5 +13,9 @@ public interface IExpectativaCapacitacionDao {
 	public List<ExpectativaCapacitacionEscala> obtenerEscala(int preguntaCodigo);
 	
 	public List<ExpectativaCompetenciaRespuesta> obtenerRespuestasIdentificacion(String id);
+	
+	public int registrarExpectativaCompetenciaRespuesta(ExpectativaCompetenciaRespuesta expectativaCompetenciaRespuesta);
+	
+	public int actualizarExpectativaCompetenciaRespuesta(ExpectativaCompetenciaRespuesta expectativaCompetenciaRespuesta);
 
 }
