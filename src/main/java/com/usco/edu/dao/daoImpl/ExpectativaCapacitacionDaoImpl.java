@@ -51,7 +51,7 @@ public class ExpectativaCapacitacionDaoImpl implements IExpectativaCapacitacionD
 				+ "left join persona p on ecr.per_codigo = p.per_codigo "
 				+ "left join graduado.expectativas_capacitacion_pregunta ecp on ecr.ecp_codigo = ecp.ecp_codigo "
 				+ "left join graduado.expectativas_capacitacion_escala ece on ecr.ece_codigo = ece.ece_codigo "
-				+ "where p.per_identificacion = '" + id + "' order by ecr.ecp_codigo asc";
+				+ "where p.per_identificacion = '" + id + "' order by ecp.ecp_orden asc";
 		return jdbcTemplate.query(sql, new ExpectativaCompetenciaRespuestaSetExtractor());
 		
 	}

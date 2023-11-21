@@ -50,7 +50,7 @@ public class SituacionLaboralDaoImpl implements ISituacionLaboralDao {
 				+ "left join persona p on slr.per_codigo = p.per_codigo "
 				+ "left join graduado.situacion_laboral_pregunta slp on slr.slp_codigo = slp.slp_codigo "
 				+ "left join graduado.situacion_laboral_escala sle on slr.sle_codigo = sle.sle_codigo  "
-				+ "where p.per_identificacion = '" + id + "'";
+				+ "where p.per_identificacion = '" + id + "' order by slp.slp_orden asc";
 		return jdbcTemplate.query(sql, new SituacionLaboralRespuestaSetExtractor());
 		
 	}
@@ -60,7 +60,7 @@ public class SituacionLaboralDaoImpl implements ISituacionLaboralDao {
 		
 		String sql = "INSERT INTO academia3000_john.graduado.situacion_laboral_respuesta "
 				+ "(per_codigo, slp_codigo, sle_codigo) "
-				+ "VALUES(?, ?, ?;";
+				+ "VALUES(?, ?, ?);";
 
 		int result = jdbcTemplateEjecucion.update(sql, new Object[] {
 				situacionLaboralRespuesta.getPersonaCodigo(),
