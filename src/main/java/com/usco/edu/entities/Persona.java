@@ -29,6 +29,9 @@ public class Persona implements Serializable{
 	
 	@Column(name = "per_email_interno")
 	private String emailInterno;
+	
+	@Column(name = "per_email")
+	private String email;
 
 	public String getEmailInterno() {
 		return emailInterno;
@@ -36,6 +39,14 @@ public class Persona implements Serializable{
 
 	public void setEmailInterno(String emailInterno) {
 		this.emailInterno = emailInterno;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Long getCodigo() {

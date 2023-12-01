@@ -60,6 +60,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
 		.antMatchers("/logo").permitAll()
 		.antMatchers("/**.js").permitAll()
 		.antMatchers("/**.css").permitAll()
+		.antMatchers("/token/**").permitAll()
 		.antMatchers("/publico/**").permitAll()
 		.antMatchers("/aprobacion/**").permitAll()
 		.antMatchers("/programasAll/snies/**").permitAll()

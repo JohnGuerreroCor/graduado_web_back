@@ -130,11 +130,11 @@ public class EmailComponent {
 	private UserPass getEmailRandom() {
 		
 		UserPass emails[] = { 
-				new UserPass("siac1@usco.edu.co","4credit4cion1"),
-				new UserPass("siac2@usco.edu.co","4credit4cion2"),
-				new UserPass("siac3@usco.edu.co","4credit4cion3"),
-				new UserPass("siac4@usco.edu.co","4credit4cion4"),
-				new UserPass("siac5@usco.edu.co","4credit4cion5"),
+				new UserPass("carnetizacion1@usco.edu.co","c4rn3t1z4c10n"),
+				new UserPass("carnetizacion2@usco.edu.co","c4rn3t1z4c10n"),
+				new UserPass("carnetizacion3@usco.edu.co","c4rn3t1z4c10n"),
+				new UserPass("carnetizacion4@usco.edu.co","c4rn3t1z4c10n"),
+				new UserPass("carnetizacion5@usco.edu.co","c4rn3t1z4c10n"),
 				};
 
 		Random random = new Random();
