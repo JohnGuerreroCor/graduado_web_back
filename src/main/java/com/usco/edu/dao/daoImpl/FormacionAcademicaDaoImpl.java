@@ -108,7 +108,7 @@ public class FormacionAcademicaDaoImpl implements IFormacionAcademicaDao{
 	@Override
 	public int actualizarHistorialAcademico(HistorialAcademico historialAcademico) {
 		
-		String sql = "UPDATE academia3000_john.graduado.historial_academico "
+		String sql = "UPDATE graduado.historial_academico "
 				+ "SET per_codigo=?, hia_titulo=?, nia_codigo=?, hia_institucion=?, mun_codigo=?, hia_fecha_inicio=?, hia_fecha_fin=?, hia_finalizado=?, hia_estado=? "
 				+ "WHERE hia_codigo=?;";
 
