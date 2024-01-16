@@ -20,7 +20,7 @@ import com.usco.edu.resultSetExtractor.SituacionLaboralRespuestaSetExtractor;
 public class SituacionLaboralDaoImpl implements ISituacionLaboralDao {
 	
 	@Autowired
-	@Qualifier("JDBCTemplatePlanesConsulta")
+	@Qualifier("JDBCTemplateConsulta")
 	public JdbcTemplate jdbcTemplate;
 	
 	@Autowired

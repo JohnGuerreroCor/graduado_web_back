@@ -21,7 +21,7 @@ public class SatisfaccionFormacionDaoImpl implements ISatisfaccionFormacionDao {
 	
 
 	@Autowired
-	@Qualifier("JDBCTemplatePlanesConsulta")
+	@Qualifier("JDBCTemplateConsulta")
 	public JdbcTemplate jdbcTemplate;
 	
 	@Autowired

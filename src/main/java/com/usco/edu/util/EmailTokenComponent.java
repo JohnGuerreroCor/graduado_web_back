@@ -124,9 +124,19 @@ Logger logger = LoggerFactory.getLogger(EmailComponent.class);
 	private UserPass getEmailRandom() {
 		
 		UserPass emails[] = { 
-				new UserPass("sistema.graduado1@usco.edu.co","gr4du4d0s"),
-				new UserPass("sistema.graduado2@usco.edu.co","gr4du4d0s"),
-				new UserPass("sistema.graduado3@usco.edu.co","gr4du4d0s"),
+				new UserPass("autenticacion.usco1@usco.edu.co","4untent1c4cion1"),
+				new UserPass("autenticacion.usco2@usco.edu.co","4untent1c4cion2"),
+				new UserPass("autenticacion.usco3@usco.edu.co","4untent1c4cion3"),
+				new UserPass("autenticacion.usco4@usco.edu.co","4untent1c4cion4"),
+				new UserPass("autenticacion.usco5@usco.edu.co","4untent1c4cion5"),
+				new UserPass("autenticacion.usco6@usco.edu.co","4untent1c4cion6"),
+				new UserPass("autenticacion.usco7@usco.edu.co","4untent1c4cion7"),
+				new UserPass("autenticacion.usco8@usco.edu.co","4untent1c4cion8"),
+				new UserPass("autenticacion.usco9@usco.edu.co","4untent1c4cion9"),
+				new UserPass("autenticacion.usco10@usco.edu.co","4untent1c4cion10"),
+				new UserPass("autenticacion.usco11@usco.edu.co","4untent1c4cion11"),
+				new UserPass("autenticacion.usco12@usco.edu.co","4untent1c4cion12"),
+				new UserPass("autenticacion.usco13@usco.edu.co","4untent1c4cion13"),
 				};
 
 		Random random = new Random();

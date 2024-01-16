@@ -19,7 +19,7 @@ public class MencionReconocimientoDaoImpl implements IMencionReconocimientoDao {
 	
 
 	@Autowired
-	@Qualifier("JDBCTemplatePlanesConsulta")
+	@Qualifier("JDBCTemplateConsulta")
 	public JdbcTemplate jdbcTemplate;
 	
 	@Autowired

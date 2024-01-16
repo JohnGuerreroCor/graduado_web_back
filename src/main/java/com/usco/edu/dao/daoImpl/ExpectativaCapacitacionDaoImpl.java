@@ -21,7 +21,7 @@ public class ExpectativaCapacitacionDaoImpl implements IExpectativaCapacitacionD
 	
 
 	@Autowired
-	@Qualifier("JDBCTemplatePlanesConsulta")
+	@Qualifier("JDBCTemplateConsulta")
 	public JdbcTemplate jdbcTemplate;
 	
 	@Autowired

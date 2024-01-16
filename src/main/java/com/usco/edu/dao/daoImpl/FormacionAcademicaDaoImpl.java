@@ -18,7 +18,7 @@ import com.usco.edu.resultSetExtractor.NivelAcademicoSetExtractor;
 public class FormacionAcademicaDaoImpl implements IFormacionAcademicaDao{
 	
 	@Autowired
-	@Qualifier("JDBCTemplatePlanesConsulta")
+	@Qualifier("JDBCTemplateConsulta")
 	public JdbcTemplate jdbcTemplate;
 	
 	@Autowired
