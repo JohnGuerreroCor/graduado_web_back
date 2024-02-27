@@ -18,22 +18,18 @@ public class UsuarioDaoImpl implements IUsuarioDao{
 
 	@Override
 	public Usuario findByUsername(String username) {
-		String sql = "select top 1 * from carnetizacion.usuario_carnet_digital_login ucdl "
-				+ "inner join uaa u on ucdl.usg_uaa = u.uaa_codigo "
-				+ "inner join sede s on s.sed_codigo = u.sed_codigo "
-				+ "inner join persona p on ucdl.up = p.per_codigo "
-				+ "where  ucdl.us = ? order by ucdl.istipo asc";
+		String sql = "select * from usuario_graduado_login ugl "
+				+ "inner join persona p on ugl.up = p.per_codigo "
+				+ "where  ugl.us = ? order by ugl.istipo asc";
 		return jdbcTemplate.queryForObject(sql, new Object[] { username }, new UsuarioRowMapper());
 	}
 
 	@Override
 	public boolean validarUser(String username) {
 		int result = 0;
-		String sql = "select COUNT(ucdl.us) from carnetizacion.usuario_carnet_digital_login ucdl " 
-				+ "inner join uaa u on ucdl.usg_uaa = u.uaa_codigo "
-				+ "inner join sede s on s.sed_codigo = u.sed_codigo "
-				+ "inner join persona p on ucdl.up = p.per_codigo "
-				+ "where ucdl.us = ? ";
+		String sql = "select COUNT(ugl.us) from usuario_graduado_login ugl "
+				+ "inner join persona p on ugl.up = p.per_codigo "
+				+ "where ugl.us = ?";
 		result =  jdbcTemplate.queryForObject(sql, new Object[] { username }, Integer.class);
 		return result > 0 ? true : false;
 	}

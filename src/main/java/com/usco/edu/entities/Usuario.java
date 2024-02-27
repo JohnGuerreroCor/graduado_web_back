@@ -87,14 +87,6 @@ public class Usuario implements Serializable {
 		this.role = role;
 	}
 	
-	public Uaa getUaa() {
-		return uaa;
-	}
-
-	public void setUaa(Uaa uaa) {
-		this.uaa = uaa;
-	}
-
 	public Persona getPersona() {
 		return persona;
 	}
@@ -107,7 +99,7 @@ public class Usuario implements Serializable {
 	@Override
 	public String toString() {
 		return "Usuario [id=" + id + ", username=" + username + ", password=" + password
-				+ ", state=" + state + ", uaa=" + uaa + ", persona=" + persona + ", role=" + role + "]";
+				+ ", state=" + state + ", persona=" + persona + ", role=" + role + "]";
 	}
 
 
