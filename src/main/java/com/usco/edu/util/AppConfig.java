@@ -7,10 +7,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.jndi.JndiTemplate;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 @Configuration
 @EnableTransactionManagement
 @Component
@@ -45,7 +45,7 @@ public class AppConfig {
 
 		} else if (perfilSeleccionado.equals("test") || perfilSeleccionado.equals("produccion")) {
 
-			dataSource = (DataSource) new JndiTemplate().lookup("java:jboss/datasources/CarnetizacionWebLoginDS");
+			dataSource = (DataSource) new JndiTemplate().lookup("java:jboss/datasources/GraduadoWebLoginDS");
 
 		}
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
@@ -65,7 +65,7 @@ public class AppConfig {
 
 		} else if (perfilSeleccionado.equals("test") || perfilSeleccionado.equals("produccion")) {
 
-			dataSource = (DataSource) new JndiTemplate().lookup("java:jboss/datasources/ControlAccesoWebEjecucionDS");
+			dataSource = (DataSource) new JndiTemplate().lookup("java:jboss/datasources/GraduadoWebEjecucionDS");
 
 		}
 		JdbcTemplate jdbcTemplate = new JdbcTemplate();
@@ -73,12 +73,5 @@ public class AppConfig {
 
 		return jdbcTemplate;
 	}
-	
-	@Bean(name = "NamedJDBCTemplateEncuestasConsulta")
-	public NamedParameterJdbcTemplate jdbcTemplateConsulta() throws Exception {
-
-		return new NamedParameterJdbcTemplate(dataSource);
-	}
-	
 
 }

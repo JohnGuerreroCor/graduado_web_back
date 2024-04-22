@@ -21,7 +21,7 @@ import com.usco.edu.dto.EmailToken;
 @Component
 public class EmailTokenComponent {
 	
-Logger logger = LoggerFactory.getLogger(EmailComponent.class);
+Logger logger = LoggerFactory.getLogger(EmailTokenComponent.class);
 	
 	public void enviar(EmailToken email) {
 		

@@ -17,15 +17,15 @@ public class UsuarioDaoImpl implements IUsuarioDao{
 	public JdbcTemplate jdbcTemplate;
 
 	@Override
-	public Usuario findByUsername(String username) {
-		String sql = "select * from usuario_graduado_login ugl "
+	public Usuario buscarUsuario(String username) {
+		String sql = "select *, GETDATE() as horaInicioSesion from usuario_graduado_login ugl "
 				+ "inner join persona p on ugl.up = p.per_codigo "
 				+ "where  ugl.us = ? order by ugl.istipo asc";
 		return jdbcTemplate.queryForObject(sql, new Object[] { username }, new UsuarioRowMapper());
 	}
 
 	@Override
-	public boolean validarUser(String username) {
+	public boolean validarUsuario(String username) {
 		int result = 0;
 		String sql = "select COUNT(ugl.us) from usuario_graduado_login ugl "
 				+ "inner join persona p on ugl.up = p.per_codigo "

@@ -27,7 +27,7 @@ public class BaseDato {
 
 			dataSource = (DataSource) ctx.lookup("jboss/datasources/ConsultaDS");
 
-//			dataSource = (DataSource) ctx.lookup("java:jboss/datasources/CarnetizacionWebConsultaDS");
+//			dataSource = (DataSource) ctx.lookup("java:jboss/datasources/GraduadoWebConsultaDS");
 
 			conexion = dataSource.getConnection();
 		} catch (Exception e) {

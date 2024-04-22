@@ -22,7 +22,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.usco.edu.entities.RespuestaToken;
 import com.usco.edu.entities.Usuario;
-import com.usco.edu.service.IAdministradorService;
+import com.usco.edu.service.IInicioSesionService;
 import com.usco.edu.service.IUsuarioService;
 
 
@@ -30,7 +30,7 @@ import com.usco.edu.service.IUsuarioService;
 public class TokenRestController {
 	
 	@Autowired
-	IAdministradorService administrativoService;
+	IInicioSesionService inicioSesionService;
 	
 	@Autowired 
 	IUsuarioService usuarioservice;
@@ -38,7 +38,7 @@ public class TokenRestController {
 	@GetMapping("/getToken/{username}")
 	public ResponseEntity<?>  getToken(@PathVariable("username") String username ,HttpServletRequest request) {
 		Map<String, Object> response = new HashMap<>();
-		Usuario usuario = usuarioservice.findByUsername(username);
+		Usuario usuario = usuarioservice.buscarUsuario(username);
 		String ip = request.getRemoteAddr().toString();
 		String respuesta = generartoken(usuario,ip);
 		
@@ -50,7 +50,7 @@ public class TokenRestController {
 	@GetMapping("/validarToken/{username}/{codigo}")
 	public ResponseEntity<?> validarToken(@PathVariable("username") String username ,@PathVariable("codigo") String codigo ,HttpServletRequest request) {
 		Map<String, Object> response = new HashMap<>();
-		Usuario usuario = usuarioservice.findByUsername(username);
+		Usuario usuario = usuarioservice.buscarUsuario(username);
 		String ip = request.getRemoteAddr().toString();
 		boolean respuesta = validarToken(usuario, ip, codigo);
 		System.out.println("Entramos validar token");
@@ -69,8 +69,8 @@ public class TokenRestController {
 	private String generartoken(Usuario usuarioLogueado , String ip ) {
 		String aplicativo = "75";
 		System.out.println(aplicativo+""+usuarioLogueado.getId() + ip);
-		String tokenSesion = administrativoService.getTokenInicioSesion(aplicativo+""+usuarioLogueado.getId() + ip , usuarioLogueado.getUsername());		
-		String url  = administrativoService.urltokenPeticion(usuarioLogueado.getUsername()) + "api/generarCodigo";
+		String tokenSesion = inicioSesionService.obtenerTokenInicioSesion(aplicativo+""+usuarioLogueado.getId() + ip , usuarioLogueado.getUsername());		
+		String url  = inicioSesionService.urlTokenPeticion(usuarioLogueado.getUsername()) + "api/generarCodigo";
 		System.out.println(url);
 		String tokenSesionbase64 = Base64.getEncoder().encodeToString(tokenSesion.getBytes());
 		
@@ -112,8 +112,8 @@ public class TokenRestController {
 	
 	private boolean validarToken(Usuario usuarioLogueado , String ip , String CodigoVerificacion ) {
 		String aplicativo = "75";
-		String tokenSesion = administrativoService.getTokenInicioSesion(aplicativo+""+usuarioLogueado.getId() + ip , usuarioLogueado.getUsername());	
-		String url  = administrativoService.urltokenPeticion(usuarioLogueado.getUsername()) + "api/validarCodigo";
+		String tokenSesion = inicioSesionService.obtenerTokenInicioSesion(aplicativo+""+usuarioLogueado.getId() + ip , usuarioLogueado.getUsername());	
+		String url  = inicioSesionService.urlTokenPeticion(usuarioLogueado.getUsername()) + "api/validarCodigo";
 		String tokenSesionbase64 = Base64.getEncoder().encodeToString(tokenSesion.getBytes());
 		
 		HttpHeaders headers = new HttpHeaders();

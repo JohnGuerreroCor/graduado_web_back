@@ -19,6 +19,7 @@ public class UsuarioRowMapper implements RowMapper<Usuario>{
 		user.setUsername(rs.getString("us"));
 		user.setState(rs.getInt("state") > 0 ? true : false);
 		user.setPersona(new PersonaRowMapper().mapRow(rs, rowNum));
+		user.setHoraInicioSesion(rs.getString("horaInicioSesion"));
 		return user;
 	}
 
